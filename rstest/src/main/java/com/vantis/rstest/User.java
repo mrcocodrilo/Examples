@@ -53,4 +53,21 @@ public class User implements Serializable {
 		this.profession = profession;
 	}
 
+	@Override
+	public boolean equals(Object object) {
+		if (object == null) {
+			return false;
+		} else if (!(object instanceof User)) {
+			return false;
+		} else {
+			User user = (User) object;
+			if (id == user.getId() 
+					&& name.equals(user.getName()) 
+					&& profession.equals(user.getProfession())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
